@@ -12,7 +12,7 @@ const  Search = ({onChange}: SearchType )=> {
             style={{height:'42px'}}
             placeholder="Enter product name"
             suffix={
-                    <SearchOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
+                <SearchOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
             }
             allowClear
             onChange={onChange}
@@ -21,3 +21,4 @@ const  Search = ({onChange}: SearchType )=> {
 }
 
 export default Search;
+

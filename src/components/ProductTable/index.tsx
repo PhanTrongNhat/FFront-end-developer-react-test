@@ -7,13 +7,6 @@ import { Search } from "../index";
 
 const defaultImage = "/image/image.jpg";
 
-interface DataType {
-    key: React.Key;
-    name: string;
-    age: number;
-    address: string;
-}
-
 const columns: Array<any> = [
     {
         title: 'Image',
