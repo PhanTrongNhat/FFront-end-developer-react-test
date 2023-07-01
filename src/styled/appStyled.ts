@@ -10,5 +10,3 @@ export const Container = styled.div`
   padding: 20px;
 
 `;
-
-export const ListWrapper = styled.div``;
