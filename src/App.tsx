@@ -48,7 +48,9 @@ function App() {
                 if(searchValue){
                     result  = await productApi.search({
                         q: searchValue,
-                        select: "title,price,images"
+                        select: "title,price,images",
+                        limit: pagination.pageSize,
+                        skip: pagination.current * (pagination.pageSize -1),
                     });
                 }else {
                     result  = await productApi.getAll({

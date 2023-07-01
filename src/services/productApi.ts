@@ -16,7 +16,7 @@ export const productApi = {
             throw error;
         }
     },
-    search: async (option?:SearchOptions) => {
+    search: async (option?:FindOptions) => {
         let url = '/product/search';
 
         const query = serialize(option);
@@ -36,12 +36,9 @@ interface FindOptions {
    select?: string;
    limit?: number;
    skip?: number;
-
-}
-
-interface SearchOptions {
    q?: string;
-   select?: string;
+
 }
+
 
 

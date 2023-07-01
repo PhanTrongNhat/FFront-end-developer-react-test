@@ -15,7 +15,6 @@ const columns: Array<any> = [
 
             return <Image src={value?.length? value[0]:defaultImage} alt={"product image"}></Image>;
         }
-
     },
     {
         title: 'Title',
