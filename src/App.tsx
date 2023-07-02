@@ -7,7 +7,6 @@ import { ProductType } from "./utils/types";
 import { notification } from 'antd'
 
 const key = 'updatable';
-let timeout:any;
 
 function App() {
     const  [productList, setProductList] = React.useState<ProductType[]>([]);
@@ -19,6 +18,7 @@ function App() {
     const [api, contextHolder] = notification.useNotification();
     const [total, setTotal] = React.useState(0);
     const [searchValue, setSearchValue] = React.useState<string>("");
+    const timeout: any = React.useRef(null);
 
     const openNotification = ({message, description}:{message: string, description: string}) => {
         api.open({
@@ -87,7 +87,7 @@ function App() {
             clearTimeout(timeout);
         }
 
-        timeout = setTimeout(() => {
+        timeout.current = setTimeout(() => {
             setSearchValue(e.target.value);
             setPagination(prevState => {
                 return {
@@ -95,7 +95,7 @@ function App() {
                     current: 1,
                 };
             });
-            timeout = null;
+            timeout.current = null;
         }, 1000);
     }
 
