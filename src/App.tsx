@@ -83,8 +83,8 @@ function App() {
     },[pagination, searchValue])
 
     const handleChangeSearchValue = (e:any) =>{
-        if (timeout) {
-            clearTimeout(timeout);
+        if (timeout.current) {
+            clearTimeout(timeout.current);
         }
 
         timeout.current = setTimeout(() => {
